@@ -40,7 +40,8 @@ function displayStudent(stu:Student){
     studentLI.innerText = stu.firstName + " " + stu.lastName;
 
     studentLI.onclick = function() {
-        let agree = confirm("Are you sure you want to delete this student?");
+        let StudentName = <HTMLElement>this;
+        let agree = confirm("Are you sure you want to delete " + StudentName.innerHTML);
         if(agree){
             let currItem= <HTMLLIElement>this;
             currItem.remove();

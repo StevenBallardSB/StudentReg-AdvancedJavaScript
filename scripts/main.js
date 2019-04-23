@@ -25,7 +25,8 @@ function displayStudent(stu) {
     var studentLI = document.createElement("li");
     studentLI.innerText = stu.firstName + " " + stu.lastName;
     studentLI.onclick = function () {
-        var agree = confirm("Are you sure you want to delete this student?");
+        var StudentName = this;
+        var agree = confirm("Are you sure you want to delete " + StudentName.innerHTML);
         if (agree) {
             var currItem = this;
             currItem.remove();

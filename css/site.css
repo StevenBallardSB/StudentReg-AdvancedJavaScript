@@ -1,3 +1,9 @@
 main > span[class=required]{
     color: red;
 }
+
+li{
+    border:solid 1px;
+    border-color: gray;
+    width: 15%;   
+}
