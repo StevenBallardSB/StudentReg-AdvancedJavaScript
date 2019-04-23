@@ -36,5 +36,10 @@ function getStudent():Student{
 }
 
 function displayStudent(stu:Student){
-    alert(stu.firstName + " " + stu.lastName);
+    let studentLI:HTMLLIElement = document.createElement("li");
+    studentLI.innerText = stu.firstName + " " + stu.lastName;
+
+    //getting <ul> and appending the new <li>
+    let list = document.querySelector("#roster > ul");
+    list.appendChild(studentLI);
 }
