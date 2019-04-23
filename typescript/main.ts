@@ -9,6 +9,7 @@ class Student{
 }
 
 //test code
+//Create a new instance, creating an object, instantiating an object
 let testStu:Student = new Student();
 testStu.firstName = "Joe";
 testStu.lastName = "Ortiz";
@@ -23,7 +24,9 @@ function registerStudent(){
     let nextStudent:Student = getStudent();
     displayStudent(nextStudent);
 }
-
+/**
+ * Gets user input from the user
+ */
 function getStudent():Student{
     let s = new Student();
     s.firstName = (<HTMLInputElement>document.getElementById("first-name")).value;
