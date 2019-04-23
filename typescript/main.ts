@@ -39,6 +39,14 @@ function displayStudent(stu:Student){
     let studentLI:HTMLLIElement = document.createElement("li");
     studentLI.innerText = stu.firstName + " " + stu.lastName;
 
+    studentLI.onclick = function() {
+        let agree = confirm("Are you sure you want to delete this student?");
+        if(agree){
+            let currItem= <HTMLLIElement>this;
+            currItem.remove();
+        }
+    }
+
     //getting <ul> and appending the new <li>
     let list = document.querySelector("#roster > ul");
     list.appendChild(studentLI);
