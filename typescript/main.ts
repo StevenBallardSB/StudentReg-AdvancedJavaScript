@@ -21,8 +21,32 @@ window.onload = function(){
 }
 
 function registerStudent(){
-    let nextStudent:Student = getStudent();
-    displayStudent(nextStudent);
+    if(isValid()){
+        let nextStudent:Student = getStudent();
+        displayStudent(nextStudent);
+    }
+}
+
+function isValid(){
+    //validate all required elements
+    let reqElems = document.querySelectorAll("main > input[data-required]");
+
+    let valid = true;
+
+for (let i = 0; i < reqElems.length; i++) {
+    let currInput = <HTMLInputElement>reqElems[i]
+    if(currInput.value == ""){
+        //disp error
+        let span = currInput.nextElementSibling;
+        let msg = span.getAttribute("data-msg");
+        span.innerHTML = msg;
+        valid = false;
+    }
+    return valid;
+}
+    //foreach element
+        //check if input is empty
+        //if true, display err in span and set boolean flag
 }
 /**
  * Gets user input from the user
